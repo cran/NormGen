@@ -1,11 +1,11 @@
-\name{parallel_Rnorm}
-\alias{parallel_Rnorm}
+\name{PRnorm}
+\alias{PRnorm}
 \title{High-Performance Multithreaded Pseudo-Normal Random Number Generator}
 \description{
 Generates multi-core parallel processing normal pseudo-random numbers powered by 'RcppParallel' and Intel 'TBB'.
 }
 \usage{
-parallel_Rnorm(n, mean = 0, sd = 1, seed = 12345L)
+PRnorm(n, mean = 0, sd = 1, seed = 12345L)
 }
 \arguments{
 \item{n}{An integer specifying the number of observations to generate.}
@@ -21,10 +21,10 @@ This function divides the generation task across available CPU threads to maximi
 }
 \examples{
 # Generate parallel numbers with an explicit seed
-parallel_samples <- parallel_Rnorm(1000, mean = 0, sd = 1, seed = 2026)
+parallel_samples <- PRnorm(1000, mean = 0, sd = 1, seed = 2026)
 
 # Verify reproducibility directly via the parameter
-verify_samples <- parallel_Rnorm(1000, mean = 0, sd = 1, seed = 2026)
+verify_samples <- PRnorm(1000, mean = 0, sd = 1, seed = 2026)
 identical(parallel_samples, verify_samples)
 }
 \author{

@@ -8,8 +8,8 @@
 #' @param sd distribution standard deviation
 #' @param seed generator seed
 #' @export
-parallel_Rnorm <- function(n, mean = 0.0, sd = 1.0, seed = 12345L) {
-    .Call(`_NormGen_parallel_Rnorm`, n, mean, sd, seed)
+PRnorm <- function(n, mean = 0.0, sd = 1.0, seed = 12345L) {
+    .Call(`_NormGen_PRnorm`, n, mean, sd, seed)
 }
 
 #' @title Single-threaded Pseudo-Normal Random Number Generator

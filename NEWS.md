@@ -1,4 +1,4 @@
-# NormGen 0.0.6
+# NormGen 0.0.7
 
 ## New Features
 * Added `parallel_Rnorm()`, a high-performance multithreaded pseudo-normal random number generator powered by `RcppParallel` and Intel 'TBB'.
@@ -13,3 +13,4 @@
 * Fixed a package check omission where the parallel generator function lacked user-facing documentation files.
 * Optimized package compilation flags within `src/Makevars` and `src/Makevars.win` to seamlessly support multi-core parallel processing.
 * Added a comprehensive suite of unit tests using `testthat` (under `tests/testthat/`) covering edge cases, vector lengths, missing parameters, and cross-reproducibility between single-threaded and parallel functions.
+* Renamed `parallel_Rnorm()` to `PRnorm()` for brevity

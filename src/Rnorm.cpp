@@ -107,7 +107,7 @@ struct ParallelRnormWorker : public Worker {
 //' @param seed generator seed
 //' @export
 // [[Rcpp::export]]
-Rcpp::NumericVector parallel_Rnorm(long long n, double mean = 0.0, double sd = 1.0, unsigned int seed = 12345) {
+Rcpp::NumericVector PRnorm(long long n, double mean = 0.0, double sd = 1.0, unsigned int seed = 12345) {
     Rcpp::NumericVector out(n);
     ParallelRnormWorker worker(out, mean, sd, seed);
     parallelFor(0, n, worker, 1000);

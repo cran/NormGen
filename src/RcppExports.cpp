@@ -10,9 +10,9 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// parallel_Rnorm
-Rcpp::NumericVector parallel_Rnorm(long long n, double mean, double sd, unsigned int seed);
-RcppExport SEXP _NormGen_parallel_Rnorm(SEXP nSEXP, SEXP meanSEXP, SEXP sdSEXP, SEXP seedSEXP) {
+// PRnorm
+Rcpp::NumericVector PRnorm(long long n, double mean, double sd, unsigned int seed);
+RcppExport SEXP _NormGen_PRnorm(SEXP nSEXP, SEXP meanSEXP, SEXP sdSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -20,7 +20,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type mean(meanSEXP);
     Rcpp::traits::input_parameter< double >::type sd(sdSEXP);
     Rcpp::traits::input_parameter< unsigned int >::type seed(seedSEXP);
-    rcpp_result_gen = Rcpp::wrap(parallel_Rnorm(n, mean, sd, seed));
+    rcpp_result_gen = Rcpp::wrap(PRnorm(n, mean, sd, seed));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -39,7 +39,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_NormGen_parallel_Rnorm", (DL_FUNC) &_NormGen_parallel_Rnorm, 4},
+    {"_NormGen_PRnorm", (DL_FUNC) &_NormGen_PRnorm, 4},
     {"_NormGen_Rnorm", (DL_FUNC) &_NormGen_Rnorm, 3},
     {NULL, NULL, 0}
 };

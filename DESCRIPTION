@@ -1,7 +1,7 @@
 Package: NormGen
 Title: An Efficient and Precise Quantile Mapping for Normal
         Pseudo-Random Number Generation
-Version: 0.0.6
+Version: 0.0.7
 Authors@R: person("Piotr", "Sulewski", , "piotr.sulewski@upsl.edu.pl", role = c("aut", "cre"))
 Description: High-performance pseudo-normal random generator using an
     optimized quantile mapping algorithm. It provides fast generation of
@@ -10,7 +10,7 @@ Description: High-performance pseudo-normal random generator using an
     single-threaded generation and parallel_Rnorm(), a high-performance,
     multithreaded variant powered by 'RcppParallel' and Intel 'TBB'.
     Package compilation flags are optimized to support multi-core parallel
-    processing.
+    processing. Renamed parallel_Rnorm() to PRnorm() for brevity.
 Depends: R (>= 3.5.0)
 Imports: Rcpp (>= 1.0.0), RcppParallel
 LinkingTo: Rcpp, RcppParallel
@@ -21,8 +21,8 @@ Language: en-US
 Encoding: UTF-8
 Config/roxygen2/version: 8.1.0
 NeedsCompilation: yes
-Packaged: 2026-10-14 10:41:41 UTC; piotr
+Packaged: 2026-10-30 19:07:12 UTC; piotr
 Author: Piotr Sulewski [aut, cre]
 Maintainer: Piotr Sulewski <piotr.sulewski@upsl.edu.pl>
 Repository: CRAN
-Date/Publication: 2026-10-22 16:20:08 UTC
+Date/Publication: 2026-10-30 20:40:02 UTC

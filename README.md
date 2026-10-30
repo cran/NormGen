@@ -5,10 +5,12 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-Random generation for the normal distribution is presented. To read more about the package
-please see (and cite :)) papers:
+Random generation for the normal distribution is presented. 
+To read more about the package please see (and cite :)) papers:
 
-Sulewski P., Drapella A. (2026). An Efficient and Precise Quantile Mapping for Normal Pseudo-Random Number Generation. Journal of Statistical Software, Under review.
+Sulewski P., Drapella A. (2026). An Efficient and Precise Quantile Mapping 
+for Normal Pseudo-Random Number Generation. Journal of Statistical Software, 
+Under review.
 
 
 ## Installation
@@ -30,7 +32,8 @@ install_github("PiotrSule/NormGen")
 ## Functions
 
 ### Rnorm
-Standard, high-performance pseudo-normal random number generation based on an optimized quantile mapping algorithm.
+Standard, high-performance pseudo-normal random number generation based 
+on an optimized quantile mapping algorithm.
 
 ``` r
 library(NormGen)
@@ -51,18 +54,18 @@ High-performance, multithreaded pseudo-normal random number generator powered by
 
 ``` r
 # Generate parallel numbers with explicit reproducibility parameter
-parallel_samples <- parallel_Rnorm(10, mean = 2, sd = 2, seed = 2026)
+parallel_samples <- PRnorm(10, mean = 2, sd = 2, seed = 2026)
 parallel_samples
 #>  [1]  4.45466992 -0.24577313 -1.50696356  3.88024531  2.16097564  5.41857159
 #>  [7]  1.80885156  4.86104178  1.35706814 -0.03064803
 
 # Verify reproducibility
-verify_samples <- parallel_Rnorm(10, mean = 2, sd = 2, seed = 2026)
+verify_samples <- PRnorm(10, mean = 2, sd = 2, seed = 2026)
 identical(parallel_samples, verify_samples)
 #> [1] TRUE
 
 # Standard parallel generation using default N(0, 1) parameters
-parallel_Rnorm(10, seed = 2026)
+PRnorm(10, seed = 2026)
 #>  [1]  1.22733496 -1.12288656 -1.75348178  0.94012265  0.08048782  1.70928580
 #>  [7] -0.09557422  1.43052089 -0.32146593 -1.01532402
 ```

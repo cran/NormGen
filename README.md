@@ -27,7 +27,6 @@ You can install the development version of **NormGen** from
 ``` r
 library("remotes")
 install_github("PiotrSule/NormGen")
-```
 
 ## Functions
 
@@ -39,7 +38,7 @@ on an optimized quantile mapping algorithm.
 library(NormGen)
 
 # Generate 10 random numbers from N(2, 4)
-Rnorm(10, m = 2, s = 2)
+Rnorm(10, mean = 2, sd = 2)
 #>  [1]  2.7330164  0.8988458 -0.1690484  2.3681542  3.5832490  1.9752853  2.1125923  1.8527157
 #>  [9]  2.6327170  2.7305332
 
@@ -49,7 +48,7 @@ Rnorm(10)
 #>  [7] -0.125655220  0.325686814 -0.352871726 -0.332205368
 ```
 
-### parallel_Rnorm
+### PRnorm
 High-performance, multithreaded pseudo-normal random number generator powered by `RcppParallel` and Intel `TBB`. It splits the simulation payload across available CPU cores, making it extremely efficient for massive sample sizes (n ≥ 10⁵). It includes an explicit `seed` parameter to guarantee computational reproducibility.
 
 ``` r

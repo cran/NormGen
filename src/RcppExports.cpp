@@ -11,12 +11,12 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // PRnorm
-Rcpp::NumericVector PRnorm(long long n, double mean, double sd, unsigned int seed);
+Rcpp::NumericVector PRnorm(int n, double mean, double sd, unsigned int seed);
 RcppExport SEXP _NormGen_PRnorm(SEXP nSEXP, SEXP meanSEXP, SEXP sdSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< long long >::type n(nSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
     Rcpp::traits::input_parameter< double >::type mean(meanSEXP);
     Rcpp::traits::input_parameter< double >::type sd(sdSEXP);
     Rcpp::traits::input_parameter< unsigned int >::type seed(seedSEXP);
@@ -25,15 +25,15 @@ BEGIN_RCPP
 END_RCPP
 }
 // Rnorm
-Rcpp::NumericVector Rnorm(int n, double m, double s);
-RcppExport SEXP _NormGen_Rnorm(SEXP nSEXP, SEXP mSEXP, SEXP sSEXP) {
+Rcpp::NumericVector Rnorm(int n, double mean, double sd);
+RcppExport SEXP _NormGen_Rnorm(SEXP nSEXP, SEXP meanSEXP, SEXP sdSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    Rcpp::traits::input_parameter< double >::type m(mSEXP);
-    Rcpp::traits::input_parameter< double >::type s(sSEXP);
-    rcpp_result_gen = Rcpp::wrap(Rnorm(n, m, s));
+    Rcpp::traits::input_parameter< double >::type mean(meanSEXP);
+    Rcpp::traits::input_parameter< double >::type sd(sdSEXP);
+    rcpp_result_gen = Rcpp::wrap(Rnorm(n, mean, sd));
     return rcpp_result_gen;
 END_RCPP
 }
